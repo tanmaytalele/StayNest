@@ -1,0 +1,441 @@
+{
+	"info": {
+		"_postman_id": "488228f5-05eb-48ab-967e-8d652fd0c382",
+		"name": "staynest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38524763"
+	},
+	"item": [
+		{
+			"name": "Create a property",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1S0Z0QWVmREJJNVhKV2VOVzBnS0E4bUkyYlRHaEhKR1QzbGhMeUVPVGtVIn0.eyJleHAiOjE3NTkyMjY0MTEsImlhdCI6MTc1OTIyNjExMSwianRpIjoib25ydHJvOmIyNjViMDlhLTY4MzMtOThkMS1hNTQ3LTJhMTEyNTAwNzE3YSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc3RheW5lc3QtcmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZTMxOGNjNGItMjM1Ny00NDFkLWFlYzctOWEyYmY4YWQ2YTc2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3RheW5lc3QtYmFja2VuZCIsInNpZCI6Ijk1MWRhYWM2LTQ3NTktNGI2ZC1iOTQ1LWQ2ZjEzNTFkOWY1MyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiSE9TVCIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1zdGF5bmVzdC1yZWFsbSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGhvciIsImVtYWlsIjoidGhvckBlbWFpbC5jb20ifQ.CCrowMr65ny-KERzYvT8Fn5L7rLyvv8huZBHyjVbyI5oYNpGH9yvEgyIzvHOLru_63837ZEsSz1O4q7M5VrA0_WoHwFzyCSjfyNJjLbt7rStUecmjqw--mNLvGE3IzwL86i8NuN_fxSrjMgjGxy_IrIlW8WKNUkilpBj7zgrBbV0BiFM9Chazg-36Sf0xstZhpr3lMJhYL_tHGa9lwGPJyvs24naYOfrb8UJEr__AJXpSDXo3gBi61Kz6-0bE-mI6aDms5p16vkjgVam5Yjo6qSlWWJ5WYqtQSNLiFzvrBHLIdvllR_odYtwTw91Cq__WKSZ7trtdrS1Q1vx80uMOA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n       \n        \"title\": \"Avengers Tower\",\n        \"description\": \"Avengers Tower\",\n        \"location\": \"NewYork\",\n        \"pricePerNight\": 7500,\n        \"imageUrl\": \"https://example.com/images/city-apartment.jpg\",\n        \"maxGuests\": 5\n      }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/properties",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a property",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1S0Z0QWVmREJJNVhKV2VOVzBnS0E4bUkyYlRHaEhKR1QzbGhMeUVPVGtVIn0.eyJleHAiOjE3NTkyMjY3OTMsImlhdCI6MTc1OTIyNjQ5MywianRpIjoib25ydHJvOmRiMThhZTgzLWJjNzItYjhjYi1kMGQyLTA4NjQwYWExY2VmMiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc3RheW5lc3QtcmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZTMxOGNjNGItMjM1Ny00NDFkLWFlYzctOWEyYmY4YWQ2YTc2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3RheW5lc3QtYmFja2VuZCIsInNpZCI6IjRlNzZhMDJjLTY0OTktNGMzYi1iOTEwLTAxNWJlZTdlNjUxNCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiSE9TVCIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1zdGF5bmVzdC1yZWFsbSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGhvciIsImVtYWlsIjoidGhvckBlbWFpbC5jb20ifQ.LCfWHNld4A9ytTQaw_EJHlGWgcSmaSsdQAZpNW3TemiR3VctjMJYI0PFVOnLEHhmfgYTbLtA4vH9EWZz81HyK_VEzPGnU8qPPrxAzcfWwZJJVpZCPDcHK6xSBaQrSkOkrF8JbQgiXjxT3U6IVyn7a7lMjIvi17Ru6pgeVuXvrKiL3kOmTjogouKX1rn2gEbe-hR7LsfXgzKYU_7PmAWNFq13j_ZaIqROX7I16sl_IQEP5LsFyjutiYVRDcHoxnS9yQTqkPF8PMq9sHyk8rRdBvbQo_2ug2UC3rWs70aJGUU5JHhvFtPTi3EipYhzfLlPT042LWjCN9cwu_secvhtIQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n       \n        \"pricePerNight\": 450,\n       \n        \"maxGuests\": 10\n      }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/properties/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"properties",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book a property",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1S0Z0QWVmREJJNVhKV2VOVzBnS0E4bUkyYlRHaEhKR1QzbGhMeUVPVGtVIn0.eyJleHAiOjE3NTkyMjY0NjQsImlhdCI6MTc1OTIyNjE2NCwianRpIjoib25ydHJvOmUyNzk0NzkzLWE3YmMtOTQyYS0xMWJhLWYzMmJiMGQ3OGIzNiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc3RheW5lc3QtcmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiN2M4MGMwZTMtMDRmOS00ZTMzLTlmODktOGNjMzZlYjBkYjIzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3RheW5lc3QtYmFja2VuZCIsInNpZCI6ImUxZDM1NjQ4LTI5MWItNGZhNy04YzBmLTBiMWZkZmQ0NmNjZCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiR1VFU1QiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtc3RheW5lc3QtcmVhbG0iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6InN0YXJrIiwiZW1haWwiOiJzdGFya0BlbWFpbC5jb20ifQ.K5KoM2Yr5zJnhNM9C0lwKGqsyhVhclBqtNdLDLZrG-OSzVz2idyZys1iugu6svq2uOqk01RhS_NtWMI8AUKwlmZ1SzePKj8lyLXqQiZ4n9RuCDAd_EZpQquKRNIz-DEFN1S-jy3_9KTxRQRKNawRLUX2qJxuUjyYiSf5mywoRzvXQ_SsdIacsHThRQXfGuRAUjnSDOBhMwlV2IHvIFRmxhQtV5_UvQdIJRwm1D19inNktbqyKW8cwJe3fjw7MSa7fb_ED-RdGET2Jf12a_SFOaGxQhD9qFFvA8I3wh5ce1I3LZwh5-zgZcehiqyTr3RX0vxYdZMAIrYOWH12gvAPhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"propertyId\": 2,\n    \"startDate\": \"2025-10-05\",\n    \"endDate\": \"2025-10-05\",\n    \"guests\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/bookings",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a booking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1S0Z0QWVmREJJNVhKV2VOVzBnS0E4bUkyYlRHaEhKR1QzbGhMeUVPVGtVIn0.eyJleHAiOjE3NTkyMjY0NjQsImlhdCI6MTc1OTIyNjE2NCwianRpIjoib25ydHJvOmUyNzk0NzkzLWE3YmMtOTQyYS0xMWJhLWYzMmJiMGQ3OGIzNiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc3RheW5lc3QtcmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiN2M4MGMwZTMtMDRmOS00ZTMzLTlmODktOGNjMzZlYjBkYjIzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3RheW5lc3QtYmFja2VuZCIsInNpZCI6ImUxZDM1NjQ4LTI5MWItNGZhNy04YzBmLTBiMWZkZmQ0NmNjZCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiR1VFU1QiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtc3RheW5lc3QtcmVhbG0iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6InN0YXJrIiwiZW1haWwiOiJzdGFya0BlbWFpbC5jb20ifQ.K5KoM2Yr5zJnhNM9C0lwKGqsyhVhclBqtNdLDLZrG-OSzVz2idyZys1iugu6svq2uOqk01RhS_NtWMI8AUKwlmZ1SzePKj8lyLXqQiZ4n9RuCDAd_EZpQquKRNIz-DEFN1S-jy3_9KTxRQRKNawRLUX2qJxuUjyYiSf5mywoRzvXQ_SsdIacsHThRQXfGuRAUjnSDOBhMwlV2IHvIFRmxhQtV5_UvQdIJRwm1D19inNktbqyKW8cwJe3fjw7MSa7fb_ED-RdGET2Jf12a_SFOaGxQhD9qFFvA8I3wh5ce1I3LZwh5-zgZcehiqyTr3RX0vxYdZMAIrYOWH12gvAPhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n    \"startDate\": \"2025-10-01\",\n    \"endDate\": \"2025-10-04\",\n    \"guests\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/bookings/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bookings",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search listings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/properties/search",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"properties",
+						"search"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "Goa",
+							"disabled": true
+						},
+						{
+							"key": "minPrice",
+							"value": "3000",
+							"disabled": true
+						},
+						{
+							"key": "maxPrice",
+							"value": "4000",
+							"disabled": true
+						},
+						{
+							"key": "startDate",
+							"value": "2025-10-01",
+							"disabled": true
+						},
+						{
+							"key": "endDate",
+							"value": "2025-10-05",
+							"disabled": true
+						},
+						{
+							"key": "guests",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get property details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/properties/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"properties",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View booking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1S0Z0QWVmREJJNVhKV2VOVzBnS0E4bUkyYlRHaEhKR1QzbGhMeUVPVGtVIn0.eyJleHAiOjE3NTkyMTY1MDUsImlhdCI6MTc1OTIxNjIwNSwianRpIjoib25ydHJvOmI1NGFmYWI1LWEzNjUtNDgxNy05NjExLTE4Njc3ODg2MTg2ZCIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc3RheW5lc3QtcmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMDVlMWNiNGYtNjU4NC00ZmMzLTk3MzItN2NjOTY5MDYwODhlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3RheW5lc3QtYmFja2VuZCIsInNpZCI6IjIyOTQ5MGUzLWI5OTQtNGNhMi1hMDExLTZlYjQ5ZmU1NzFkOSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiR1VFU1QiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtc3RheW5lc3QtcmVhbG0iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6InNwaWRlcm1hbiIsImVtYWlsIjoic3BpZGVybWFuQGVtYWlsLmNvbSJ9.It-VGZSxr7Boxq0GjSNtiKq-mi8vPNjBCAcdED4SIrk-9rFOrOgU7U6tI_uINGwxuK7EYytAjiBy41V6MP8ZxOf993xIK1TqJX4yCvreWUCk1g39DsPAXTX2uMYugVmVMyTf23EoA5tFN2vKs17AkGr38BfMo56kgfDm0_RcZ5eXBRFIuxMXzWOETBMXApT06mGNvKzksqlHooNlVhUxqgRM5NweDiKWgpYcrSa9uMcvUJpeZS3zJfPljtdUB_Re8stO3QiomeHsoQjwV3yRewCLLqALADXaMt64WOvJamOSpuG7AUfJ2s3oAVGSOjbCGgfPO8piNyj7tJxowQLw9w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/bookings/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bookings",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List properties by host",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1S0Z0QWVmREJJNVhKV2VOVzBnS0E4bUkyYlRHaEhKR1QzbGhMeUVPVGtVIn0.eyJleHAiOjE3NTkyMjY3OTMsImlhdCI6MTc1OTIyNjQ5MywianRpIjoib25ydHJvOmRiMThhZTgzLWJjNzItYjhjYi1kMGQyLTA4NjQwYWExY2VmMiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc3RheW5lc3QtcmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZTMxOGNjNGItMjM1Ny00NDFkLWFlYzctOWEyYmY4YWQ2YTc2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3RheW5lc3QtYmFja2VuZCIsInNpZCI6IjRlNzZhMDJjLTY0OTktNGMzYi1iOTEwLTAxNWJlZTdlNjUxNCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiSE9TVCIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1zdGF5bmVzdC1yZWFsbSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGhvciIsImVtYWlsIjoidGhvckBlbWFpbC5jb20ifQ.LCfWHNld4A9ytTQaw_EJHlGWgcSmaSsdQAZpNW3TemiR3VctjMJYI0PFVOnLEHhmfgYTbLtA4vH9EWZz81HyK_VEzPGnU8qPPrxAzcfWwZJJVpZCPDcHK6xSBaQrSkOkrF8JbQgiXjxT3U6IVyn7a7lMjIvi17Ru6pgeVuXvrKiL3kOmTjogouKX1rn2gEbe-hR7LsfXgzKYU_7PmAWNFq13j_ZaIqROX7I16sl_IQEP5LsFyjutiYVRDcHoxnS9yQTqkPF8PMq9sHyk8rRdBvbQo_2ug2UC3rWs70aJGUU5JHhvFtPTi3EipYhzfLlPT042LWjCN9cwu_secvhtIQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/host/properties",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"host",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bookings for a property",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1S0Z0QWVmREJJNVhKV2VOVzBnS0E4bUkyYlRHaEhKR1QzbGhMeUVPVGtVIn0.eyJleHAiOjE3NTkyMjY3OTMsImlhdCI6MTc1OTIyNjQ5MywianRpIjoib25ydHJvOmRiMThhZTgzLWJjNzItYjhjYi1kMGQyLTA4NjQwYWExY2VmMiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc3RheW5lc3QtcmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZTMxOGNjNGItMjM1Ny00NDFkLWFlYzctOWEyYmY4YWQ2YTc2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3RheW5lc3QtYmFja2VuZCIsInNpZCI6IjRlNzZhMDJjLTY0OTktNGMzYi1iOTEwLTAxNWJlZTdlNjUxNCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiSE9TVCIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1zdGF5bmVzdC1yZWFsbSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGhvciIsImVtYWlsIjoidGhvckBlbWFpbC5jb20ifQ.LCfWHNld4A9ytTQaw_EJHlGWgcSmaSsdQAZpNW3TemiR3VctjMJYI0PFVOnLEHhmfgYTbLtA4vH9EWZz81HyK_VEzPGnU8qPPrxAzcfWwZJJVpZCPDcHK6xSBaQrSkOkrF8JbQgiXjxT3U6IVyn7a7lMjIvi17Ru6pgeVuXvrKiL3kOmTjogouKX1rn2gEbe-hR7LsfXgzKYU_7PmAWNFq13j_ZaIqROX7I16sl_IQEP5LsFyjutiYVRDcHoxnS9yQTqkPF8PMq9sHyk8rRdBvbQo_2ug2UC3rWs70aJGUU5JHhvFtPTi3EipYhzfLlPT042LWjCN9cwu_secvhtIQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/host/properties/2/bookings",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"host",
+						"properties",
+						"2",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel future booking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1S0Z0QWVmREJJNVhKV2VOVzBnS0E4bUkyYlRHaEhKR1QzbGhMeUVPVGtVIn0.eyJleHAiOjE3NTkyMjcwNTksImlhdCI6MTc1OTIyNjc1OSwianRpIjoib25ydHJvOjM1ZjM4ZTlhLTk1ZmItOWZjMi1mMDlmLWE1ZjAzMTNmZmNlYyIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc3RheW5lc3QtcmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiN2M4MGMwZTMtMDRmOS00ZTMzLTlmODktOGNjMzZlYjBkYjIzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3RheW5lc3QtYmFja2VuZCIsInNpZCI6IjViNjEyNzIyLTg2YjItNGVlZC1iMDFiLTBhY2JjNTU3YTFhNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiR1VFU1QiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtc3RheW5lc3QtcmVhbG0iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6InN0YXJrIiwiZW1haWwiOiJzdGFya0BlbWFpbC5jb20ifQ.cfzMMxyKrM7PEGoXuKU514IPHd7zEkAvDH3ok5trMHs-QuEJOgZc1DLcFwKV40WJ1jNX-iQWXPVR8IzN2kdXaJHi7xQFi4cMb3q3y3XRJe61OrGiyi_kYi_RTdWUfdc3ghdhegTYM1RkmR5x3RNxSrCaq-8xuGD-YqlEFflHrQupy0olmVq8FTrrxGhKeuPzphweJwpiq8wiEdBZBhDRgMWmjxTh2r6IMkObzj_v3I2y22ZQHWlpFqEq-2NJGx0FOg5eKncgNQzBK18z1OjHjTgAhcJalNfbHSvMour8h3MWKrV2W8OwuV7ZPH20Ih9WxQZycQBvNUoc-4p0WXJsjg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/bookings/3",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bookings",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"thor\",\n    \"email\": \"thor@email.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/auth/register/host",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"auth",
+						"register",
+						"host"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"stark\",\n    \n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/auth/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": ""
+		}
+	]
+}

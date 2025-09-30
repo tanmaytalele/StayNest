@@ -21,24 +21,14 @@ mvn spring-boot:run
 
 ## Database Schema
 
-### Users
-| Column     | Type   | Description           |
-|------------|--------|-------------------|
-| id         | UUID   | Primary key         |
-| username   | String | Unique              |
-| email      | String |                     |
-| password   | String | Encrypted           |
-| roles      | String | Comma-separated roles|
-| created_at | Timestamp |                  |
-
 ### Properties
 | Column       | Type    | Description                     |
 |--------------|--------|---------------------------------|
-| id           | UUID   | Primary key                     |
-| host_id      | UUID   | FK -> users.id                  |
+| id           | Long   | Primary key                     |
+| host_id      | UUID   | from keycloak                  |
 | description  | Text   | Property description            |
 | location     | String |                                 |
-| pricePerNight| Decimal|                                 |
+| pricePerNight| Long   |                                 |
 | imageUrl     | String |                                 |
 | maxGuests    | Integer|                                 |
 | created_at   | Timestamp|                               |
@@ -46,9 +36,9 @@ mvn spring-boot:run
 ### Bookings
 | Column      | Type   | Description                      |
 |-------------|--------|----------------------------------|
-| id          | UUID   | Primary key                      |
-| property_id | UUID   | FK -> properties.id              |
-| guest_id    | UUID   | FK -> users.id                   |
+| id          | Long   | Primary key                      |
+| property_id | Long   | FK -> properties.id              |
+| guest_id    | UUID   | from keycloak                   |
 | start_date  | Date   |                                  |
 | end_date    | Date   |                                  |
 | guests      | Integer| Number of guests                 |
@@ -62,11 +52,17 @@ mvn spring-boot:run
 
 ### Properties
 - **POST /properties** - Create a property  
-- **GET /properties/{id}** - Get property by ID  
+- **GET /properties/{id}** - Get property by ID
+- **GET /properties** - Search Properties by filters
 - **PUT /properties/{id}** - Update property (only provided fields; blocked if future bookings exist)  
-- **DELETE /properties/{id}** - Delete property  
+ 
 
 ### Bookings
 - **POST /bookings** - Create a booking  
 - **PUT /bookings/{id}** - Update booking (dates and guests; defaults to previous values if not provided)  
 - **GET /bookings/{id}** - Get booking by ID
+- **DELETE /bookings/{id}** - Cancel booking by ID
+
+### Host
+- **GET /host/properties** List properties by host
+- **GET /host/properties/{id}/bookings** - Bookings for a property
